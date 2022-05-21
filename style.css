@@ -1,0 +1,36 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Poppins', 'roboto';
+    background-color: #cccc;
+}
+
+/*-- Header Styling --*/
+.header-wrap{
+    display: flex;
+    justify-content: space-between;
+    padding: 2%;
+    font-size: 1em;
+    color: #fff;
+    background: #6d7463;
+}
+
+/*-- Main Section Styling --*/
+/*-- task styling --*/
+.task-input{
+    padding: 2%;
+    border-bottom: #b4b4b2 0.5px solid;
+}
+.task-input #task-input{
+    padding: 1%;
+    width: 100%;
+    border: none;
+    background: transparent;
+}
+::placeholder{
+    font-size: 1.2em;
+    color: #292929;
+}
