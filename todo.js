@@ -31,6 +31,8 @@ renderAllTasks()
 
 
 
+
+
 // function addItem(){
 //     const inputText = document.getElementById('input-text');
 //     const todoItems = document.querySelector('.todo-items');

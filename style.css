@@ -23,7 +23,11 @@ body{
     color: #fff;
     z-index: 100;
 }
-
+ a {
+    text-decoration: none;
+    color: white;
+    
+}
 
 
 /*-- Main Section Styling --*/
@@ -157,9 +161,9 @@ footer{
     }
     .coffee-button{
         bottom: 2%;
-        width: 25%;
+        width: 15%;
         margin: auto;
-        margin-left: 2%;
+        margin-left: 50%;
         border-radius: 4px;
     }
 }
@@ -168,8 +172,10 @@ footer{
         width: 15%;
         margin: auto;
         margin-left: 2%;
-        padding-right: 1%;
-        padding-top: 1%;
+        padding-right: 0.25%;
+        padding-top: 0.25%;
+        padding-bottom: 0.25%;
+        
     }
 }
 
