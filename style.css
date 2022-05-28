@@ -18,82 +18,176 @@ body{
     color: #fff;
     background: #6d7463;
 }
+.header-wrap i{
+    font-size: 5em;
+    color: #fff;
+    z-index: 100;
+}
 
 /*-- Main Section Styling --*/
 /*-- task styling --*/
-.task-input{
+form{
     padding: 2%;
-    border-bottom: #b4b4b2 0.5px solid;
 }
-.task-input #task-input{
+#input-text{
+    font-size: 1.4em;
     padding: 1%;
-    width: 100%;
+    width: 80%;
     border: none;
     background: transparent;
+    box-shadow: 0 4px 10px rgb(0, 0, 0, 0.1);
+    /*border-bottom: #b4b4b2 0.5px solid;*/
 }
 ::placeholder{
+    color: #b5b5b5;
+}
+#add-btn{
+    width: 19%;
+    padding: 1%;
+    border: none;
+    border-radius: 4px;
+    background: #008000;
+    color: #fff;
+    transition: .5s;
+    font-size: 1.1em;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+#add-btn:hover{
+    background: #15b615;
+    cursor: pointer;
+}
+
+.todo-items{
+    width: 100%;
+    height: auto;
+    padding: 2%;
+}
+.taskItems{
+    display: flex;
+    justify-content: space-between;
+    width: 99%;
+    height: auto;
     font-size: 1.2em;
+    border-radius: 2px;
+    padding: .5%;
+    margin-left: 2px;
+    margin-bottom: 5px;
+    color: #181717;
+    background-color: #fff;
+}
+p{
+    width: 90%;
+    font-size: 1.2em;
+
+}
+.itemElement{
+    width: 95%;
+}
+#inputTask{
+    font-size: 1.3em;
+}
+#check{
+    font-size: 1.3em;
+}
+.icons i{
+    padding: 2px;
+}
+/* Footer Styling */
+footer{
+    width: 100%;
+    height: 200px;
+    z-index: -100;
+}
+.footer ul{
+    display: flex;
+    justify-content: center;
+}
+.footer ul li{
+    list-style: none;
+    margin: 0 1.5%;
+}
+.footer ul li a{
+    text-decoration: none;
     color: #292929;
 }
 
-.footer{
-    display: flex;
-    justify-content: center;
-    gap: 25px;
-
-
-
-}
-.footer a{
-    text-decoration: none;
-
-
-}
+/* Coffe Button Styling */
 #coffee-btn{
     width: 100%;
     border: none;
     color: white;
-    padding: 15px 32px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
+    font-size: 1.2em;
+    margin: auto;
+    padding-top: 6%;
+    padding-right: 2%;
     background: transparent; 
 
 }
-
 .coffee-button{
-
-    
-    width: 50%;
+    position: absolute;
+    bottom: 2%;
+    width: 40%;
     margin: auto;
+    margin-left: 2%;
+    border-radius: 4px;
     background-color: green;
+}
+.coffee-button:hover{
+    cursor: pointer;
 }
 
 @media only screen and (min-width: 1024px){
+    .font-i{
+        position: absolute;
+        display: inline-block;
+        right: 1.5em;
+        top: 8em;
+        font-size: 1.3em;
+        color: #ee1818;
+    }
+
+
     #coffee-btn{
         width: 100%;
         border: none;
         color: white;
-        padding: 15px 32px;
+        padding: 2%;
         text-align: center;
         text-decoration: none;
         display: inline-block;
-        font-size: 16px;
-        margin: 4px 2px;
-        cursor: pointer;
+        font-size: 1.4em;
+        margin: auto;
+        padding-top: 6%;
+        padding-right: 5%;
         background: transparent; 
     
     }
-    
     .coffee-button{
-    
-        
-        width: 20%;
+        bottom: 2%;
+        width: 25%;
         margin: auto;
-        background-color: green;
+        margin-left: 2%;
+        border-radius: 4px;
+    }
+}
+@media only screen and (min-width: 1920px){
+    .font-i{
+        right: 2em;
+        top: 9.8em;
+        font-size: 1.7em;
+    }
+
+
+    .coffee-button{
+        width: 15%;
+        margin: auto;
+        margin-left: 2%;
+        padding-right: 1%;
+        padding-top: 1%;
     }
 }
 
