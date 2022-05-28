@@ -133,7 +133,7 @@ footer{
 .coffee-button{
     position: absolute;
     bottom: 2%;
-    width: 40%;
+    width: 20%;
     margin: auto;
     margin-left: 2%;
     border-radius: 4px;
@@ -145,36 +145,50 @@ footer{
 
 @media only screen and (min-width: 1024px){
     #coffee-btn{
-        width: 100%;
-        border: none;
-        color: white;
-        padding: 2%;
-        text-align: center;
-        text-decoration: none;
-        display: inline-block;
-        font-size: 1.4em;
-        margin: auto;
-        padding-top: 0%;
-        padding-right: 3%;
-        background: transparent; 
+            width: 100%;
+            border: none;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 1.2em;
+            margin: auto;
+            padding-top: 0%;
+            padding: 2%;
+            background: transparent; 
     
     }
     .coffee-button{
+        position: absolute;
         bottom: 2%;
-        width: 15%;
+        width: 20%;
         margin: auto;
-        margin-left: 50%;
+        margin-left: 2%;
         border-radius: 4px;
+        background-color: green;
     }
 }
 @media only screen and (min-width: 1920px){
+        #coffee-btn{
+            width: 100%;
+            border: none;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 1.2em;
+            margin: auto;
+            padding: 0.5;
+            background: transparent;
+        }
     .coffee-button{
+        position: absolute;
+        bottom: 2%;
         width: 15%;
         margin: auto;
         margin-left: 2%;
-        padding-right: 0.25%;
-        padding-top: 0.25%;
-        padding-bottom: 0.25%;
+        border-radius: 4px;
+        background-color: green;
         
     }
 }
