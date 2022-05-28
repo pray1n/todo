@@ -28,7 +28,7 @@ body{
 
 /*-- Main Section Styling --*/
 /*-- task styling --*/
-form{
+#input-form{
     padding: 2%;
 }
 #input-text{
