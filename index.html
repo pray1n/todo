@@ -9,12 +9,35 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
     <div class="container-fluid">
         <!--Header-->
-            <header>
-                <div class="header-wrap">
-                    <div class="my-todo">
-                        <h2>My Todo List</h2>
+        <header>
+            <div class="header-wrap">
+                <div class="my-todo">
+                    <h2>My Todo List</h2>
+                </div>
+                <div class="date">
+                    <script>
+                        date = new Date().toLocaleDateString();
+                        document.write(date.fontsize(5));
+                        
+                    </script>
+                </div>
+            </div>
+        </header>
+
+    <!--Main-->
+        <main>
+            <form class="task-input-form" id="input-form">
+                <input type="text" placeholder="Please enter your new task here..." value="" id="input-text" autocomplete="off">
+                <button id="add-btn" onclick="addItem()">Add Task</button>
+            </form>
+            
+            <div class="todo-items">
+                 <div class="taskItems">
+                    <div class="itemElement">
+                        <p class="task-p">Javascript tutorial video editing</p>
                     </div>
                     <div class="date">
                         <h2>21.05.2022</h2>
