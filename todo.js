@@ -1,21 +1,34 @@
 const allTasks = []
+const inputTextElement = document.getElementById('input-text');
+const inputText = inputTextElement.value
 
 // Adding Value to the tasks Input box together
 //  with an Alert Message for empty task inputs
 function addItem (){
     const inputTextElement = document.getElementById('input-text');
     const inputText = inputTextElement.value
-    inputText
     if(!inputTextElement.value){
         alert("Please add a task!")
         return
     }
-    console.log(inputTextElement.value)
+
+
+
     inputTextElement.value = ''
+
     allTasks.push(inputText)
 
     renderAllTasks() // What is the purpose of this line in this particular function?
 }
+
+
+    inputTextElement.addEventListener('keydown', function(event){
+        inputText
+        if(event.key === "Enter"){
+            addItem()
+        }
+    });
+
 
     // Getting the HTML content for the task input
 function getTaskHtml(taskText,index){
@@ -23,6 +36,7 @@ function getTaskHtml(taskText,index){
     <div class="taskItems">
         <div class="itemElement">
             <p class="task-p">${taskText}</p>
+            <span id="addDate">Add a date</span>
         </div>
         <div class="icons">
         <i class="fa-solid fa-check"></i>
