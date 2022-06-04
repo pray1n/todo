@@ -158,7 +158,6 @@ footer{
     
     }
     .coffee-button{
-        position: absolute;
         bottom: 2%;
         width: 20%;
         margin: auto;
@@ -181,7 +180,6 @@ footer{
             background: transparent;
         }
     .coffee-button{
-        position: absolute;
         bottom: 2%;
         width: 15%;
         margin: auto;
