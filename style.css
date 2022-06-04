@@ -23,7 +23,9 @@ body{
     color: #fff;
     z-index: 100;
 }
-
+.date{
+    padding-right: .7%;
+}
 
 
 /*-- Main Section Styling --*/
@@ -72,19 +74,31 @@ body{
     height: auto;
     font-size: 1.2em;
     border-radius: 2px;
-    padding: .5%;
+    padding: .2%;
     margin-left: 2px;
     margin-bottom: 5px;
     color: #181717;
     background-color: #fff;
+    align-items: center;
 }
 p{
-    width: 90%;
+    margin-right: 4%;
     font-size: 1.2em;
-
+    padding-top: .5%;
 }
 .itemElement{
+    display: flex;
     width: 95%;
+}
+span#addDate{
+    font-size: 12px;
+    padding: .5%;
+    background: #eee;
+    border: 1px solid transparent;
+    color: #666;
+    border-radius: 12px;
+    cursor: pointer;
+    margin-top: .5%;
 }
 
 .icons i{
