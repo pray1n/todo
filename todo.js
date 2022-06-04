@@ -11,7 +11,13 @@ function addItem (){
         alert("Please add a task!")
         return
     }
+
+
+
+    inputTextElement.value = ''
+
     allTasks.push(inputText)
+
     renderAllTasks() // What is the purpose of this line in this particular function?
 }
 
@@ -25,7 +31,7 @@ function addItem (){
 
 
     // Getting the HTML content for the task input
-function getTaskHtml(taskText){
+function getTaskHtml(taskText,index){
     return `
     <div class="taskItems">
         <div class="itemElement">
@@ -35,7 +41,7 @@ function getTaskHtml(taskText){
         <div class="icons">
         <i class="fa-solid fa-check"></i>
         <i class="fa-solid fa-pen"></i>
-        <i class="fa-solid fa-trash"></i>
+        <i class="fa-solid fa-trash" onclick="deleteTask(${index})"></i>
         </div>
     </div> 
     `
@@ -45,11 +51,15 @@ function getTaskHtml(taskText){
 function renderAllTasks(){
     const todoItems = document.querySelector('.todo-items');
     todoItems.innerHTML = '';
-    for(task of allTasks){
-        todoItems.innerHTML += getTaskHtml(task);
+    for(let index=0; index<allTasks.length; index++){
+        const task = allTasks[index]
+        todoItems.innerHTML += getTaskHtml(task,index);
     }
 }
-
+function deleteTask(index){
+    console.log('will delete task with ' + index)
+    renderAllTasks(index)
+}   
 
 renderAllTasks()
 
@@ -97,7 +107,7 @@ renderAllTasks()
     //     })
 // }
 
-    
+
 
 
 
