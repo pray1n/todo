@@ -87,9 +87,6 @@ p{
     width: 95%;
 }
 
-.check{
-    font-size: 1.3em;
-}
 .icons i{
     padding: 2px;
     color: #6d7463;
@@ -128,7 +125,6 @@ footer{
 
 }
 .coffee-button{
-    position: absolute;
     bottom: 2%;
     width: 40%;
     margin: auto;

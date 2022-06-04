@@ -1,17 +1,21 @@
 const allTasks = []
 
+// Adding Value to the tasks Input box together
+//  with an Alert Message for empty task inputs
 function addItem (){
     const inputTextElement = document.getElementById('input-text');
     const inputText = inputTextElement.value
+    inputText
     if(!inputTextElement.value){
         alert("Please add a task!")
         return
     }
-    console.log(inputText)
+    console.log(inputTextElement.value)
     allTasks.push(inputText)
-    renderAllTasks()
+    renderAllTasks() // What is the purpose of this line in this particular function?
 }
 
+    // Getting the HTML content for the task input
 function getTaskHtml(taskText){
     return `
     <div class="taskItems">
