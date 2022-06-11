@@ -143,7 +143,7 @@ footer{
     flex-direction: row-reverse;
     align-items: center;
     justify-content: flex-end;
-    margin: 0;
+    
     }
 
 
@@ -151,7 +151,7 @@ footer{
     display: flex;
     justify-content: center;
     width: 30rem;
-    margin-left: 15rem;
+    margin-left: 30rem;
 }
 .footer ul li{
     list-style: none;
@@ -193,14 +193,6 @@ footer{
     .icons {
         display: flex;
         justify-content: center;
-    }
-    footer{
-    display: flex;
-    flex-direction: row-reverse;
-    align-items: center;
-    justify-content: flex-end;
-    gap: 6rem;
-    margin: 0;
     }
     
     #coffee-btn{
