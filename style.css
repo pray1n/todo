@@ -114,6 +114,15 @@ p{
     padding: 2px;
     color: #6d7463;
 }
+#edit{
+    display: flex;
+    padding: .4%;
+}
+#edit Input{
+    margin-right: 10px;
+    padding: 9px;
+}
+
 /* Footer Styling */
 footer{
     width: 100%;

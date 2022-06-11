@@ -57,10 +57,9 @@ function getTaskHtml(taskText,index){
         taskParagraphText.style.color = 'white';
     }
     
-    function deleteTask(){
+    function deleteTask(index){
         const taskItems = document.querySelector('.taskItems');
         taskItems.remove();
-        checkIcon.style.color = 'limegreen';
     }
     function confirmChange(id){
         const taskInput = document.getElementById('taskInput'+ id).value
@@ -74,11 +73,12 @@ function getTaskHtml(taskText,index){
         const id = listItem.dataset.id
         const taskDesc = allTasks[id]
         listItem.innerHTML =`
-        <div> 
-        <input type="text" id="taskInput${id}" value='${taskDesc}'>
-        <div class="icons">
-        <i class="fa-solid fa-check" onclick="confirmChange(${id})" id="confirmChange${id}" ></i>
-        <i class="fa-solid fa-trash" onclick="renderAllTasks()"></i>
+        <div id="edit"> 
+            <input class="editInput" type="text" id="taskInput${id}" value='${taskDesc}'>
+            <div class="icons" id="editIcons">
+                <i class="fa-solid fa-check" onclick="confirmChange(${id})" id="confirmChange${id}" ></i>
+                <i class="fa-solid fa-trash" onclick="renderAllTasks()"></i>
+            </div>
         </div>
 
         `
@@ -99,13 +99,7 @@ function getTaskHtml(taskText,index){
         //listItem.classList.toggle("editMode");
     }
 
-        
-    function deleteTask(){
-        const todoItems = document.querySelector('.todo-items');
-        todoItems.remove();
-    }
-
-function renderAllTasks(){
+    function renderAllTasks(){
     const todoItems = document.querySelector('.todo-items');
     todoItems.innerHTML = '';
     for(let index=0; index<allTasks.length; index++){
