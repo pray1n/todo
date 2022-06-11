@@ -52,18 +52,9 @@ function getTaskHtml(taskText,index){
         
     }
     function deleteTask(){
-        const deleteIcon = document.getElementById('deleteTask');
+        const todoItems = document.querySelector('.todo-items');
         todoItems.remove();
     }
-
-    
-    // const editIcon = document.getElementsByClassName('fa-solid fa-pen');
-    // const deleteIcon = document.getElementsByClassName('fa-solid fa-trash');
-    // // checkIcon.className = 'fa-solid fa-check';
-    // // checkIcon.style.color = 'lightgray';
-    // checkIcon.addEventListener('click', function(){
-    //     checkIcon.style.color = 'limegreen';
-    // })
 
 function renderAllTasks(){
     const todoItems = document.querySelector('.todo-items');
@@ -73,11 +64,7 @@ function renderAllTasks(){
         todoItems.innerHTML += getTaskHtml(task,index);
     }
 }
-
-function deleteTask(){
-    const todoItems = document.querySelector('.todo-items');
-    todoItems.remove();
-}   
+  
 
 renderAllTasks()
 
