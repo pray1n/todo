@@ -1,4 +1,4 @@
-const allTasks = []
+
 const inputTextElement = document.getElementById('input-text');
 const inputText = inputTextElement.value
 
@@ -18,6 +18,7 @@ function addItem (){
     })
 
     renderAllTasks() // What is the purpose of this line in this particular function?
+    storeTasks()
 }
 
 
@@ -28,7 +29,19 @@ function addItem (){
         }
     });
 
-
+    function storeTasks(){
+        const dataAsString = JSON.stringify(allTasks)
+        localStorage.setItem('allTasks', dataAsString)
+    }
+    function loadTasks(){
+        const dataAsString = localStorage.getItem('allTasks')
+        if(!dataAsString){
+            return [];
+        }
+        return JSON.parse(dataAsString)
+    }
+    const allTasks = loadTasks()
+    
     // Getting the HTML content for the task input
 function getTaskHtml(taskText,index){
     let taskDone = '';
@@ -64,6 +77,7 @@ function getTaskHtml(taskText,index){
         taskParagraphText.style.color = 'white';
         allTasks[index].isDone = !allTasks[index].isDone
         renderAllTasks()
+        storeTasks()
     }
     
     function deleteTask(index){
@@ -72,12 +86,13 @@ function getTaskHtml(taskText,index){
         console.log(index)
         allTasks.splice(index, 1)
         renderAllTasks()
+        storeTasks()
     }
     function confirmChange(id){
         const taskInput = document.getElementById('taskInput'+ id).value
         allTasks[id].name = taskInput 
         renderAllTasks()
-
+        storeTasks()
     }
     const editTask = function(element){
         let listItem = element.parentNode.parentNode
@@ -94,6 +109,7 @@ function getTaskHtml(taskText,index){
         </div>
 
         `
+
         //let editInput = document.getElementById('input-text')
         //console.log(editInput)
         //let containsClass = listItem.classList.contains("editMode");
