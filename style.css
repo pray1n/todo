@@ -101,7 +101,7 @@ h2 {
 }
 .taskItemDone{
     background-color: limegreen;
-    color: white;
+    color: #fff;
 }
 p{
     margin-right: 4%;
