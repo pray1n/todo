@@ -98,7 +98,7 @@ p{
     display: flex;
     width: 95%;
 }
-span#addDate{
+#addDate{
     font-size: 12px;
     padding: .5%;
     background: #eee;

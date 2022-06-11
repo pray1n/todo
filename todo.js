@@ -11,11 +11,7 @@ function addItem (){
         alert("Please add a task!")
         return
     }
-
-
-
     inputTextElement.value = ''
-
     allTasks.push(inputText)
 
     renderAllTasks() // What is the purpose of this line in this particular function?
@@ -23,7 +19,7 @@ function addItem (){
 
 
     inputTextElement.addEventListener('keydown', function(event){
-        inputText
+        
         if(event.key === "Enter"){
             addItem()
         }
@@ -36,17 +32,38 @@ function getTaskHtml(taskText,index){
     <div class="taskItems">
         <div class="itemElement">
             <p class="task-p">${taskText}</p>
-            <span id="addDate">Add a date</span>
+            <input type="date" id="addDate" value="">
         </div>
         <div class="icons">
-        <i class="fa-solid fa-check"></i>
-        <i class="fa-solid fa-pen"></i>
-        <i class="fa-solid fa-trash" onclick="deleteTask(${index})"></i>
+        <i class="fa-solid fa-check" onclick="checkTask()" id="checkTask"></i>
+        <i class="fa-solid fa-pen" onclick="editTask()" id="editTask"></i>
+        <i class="fa-solid fa-trash" onclick="deleteTask()" id="checkTask"></i>
         </div>
     </div> 
     `
     
 }
+
+    function checkTask(){
+        const checkIcon = document.getElementById('checkTask');
+        checkIcon.style.color = 'limegreen';
+    }
+    function editTask(){
+        
+    }
+    function deleteTask(){
+        const deleteIcon = document.getElementById('deleteTask');
+        todoItems.remove();
+    }
+
+    
+    // const editIcon = document.getElementsByClassName('fa-solid fa-pen');
+    // const deleteIcon = document.getElementsByClassName('fa-solid fa-trash');
+    // // checkIcon.className = 'fa-solid fa-check';
+    // // checkIcon.style.color = 'lightgray';
+    // checkIcon.addEventListener('click', function(){
+    //     checkIcon.style.color = 'limegreen';
+    // })
 
 function renderAllTasks(){
     const todoItems = document.querySelector('.todo-items');
@@ -56,9 +73,10 @@ function renderAllTasks(){
         todoItems.innerHTML += getTaskHtml(task,index);
     }
 }
-function deleteTask(index){
-    console.log('will delete task with ' + index)
-    renderAllTasks(index)
+
+function deleteTask(){
+    const todoItems = document.querySelector('.todo-items');
+    todoItems.remove();
 }   
 
 renderAllTasks()
