@@ -37,7 +37,7 @@ function getTaskHtml(taskText,index){
         <div class="icons">
         <i class="fa-solid fa-check" onclick="checkTask()" id="checkTask"></i>
         <i class="fa-solid fa-pen" onclick="editTask()" id="editTask"></i>
-        <i class="fa-solid fa-trash" onclick="deleteTask()" id="checkTask"></i>
+        <i class="fa-solid fa-trash" onclick="deleteTask(${index})" id="deleteTask"></i>
         </div>
     </div> 
     `
@@ -46,14 +46,16 @@ function getTaskHtml(taskText,index){
 
     function checkTask(){
         const checkIcon = document.getElementById('checkTask');
-        checkIcon.style.color = 'limegreen';
+        const taskItems = document.querySelector('.taskItems');
+        const taskParagraphText = document.querySelector('.task-p');
+        taskItems.style.backgroundColor = 'limegreen';
+        checkIcon.style.color = 'white';
+        taskParagraphText.style.color = 'white';
     }
-    function editTask(){
-        
-    }
+    
     function deleteTask(){
-        const deleteIcon = document.getElementById('deleteTask');
-        todoItems.remove();
+        const taskItems = document.querySelector('.taskItems');
+        taskItems.remove();
     }
 
     
@@ -74,10 +76,7 @@ function renderAllTasks(){
     }
 }
 
-function deleteTask(){
-    const todoItems = document.querySelector('.todo-items');
-    todoItems.remove();
-}   
+   
 
 renderAllTasks()
 
