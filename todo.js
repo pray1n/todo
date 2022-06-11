@@ -12,7 +12,10 @@ function addItem (){
         return
     }
     inputTextElement.value = ''
-    allTasks.push(inputText)
+    allTasks.push({
+        name: inputText,
+        isDone: false
+    })
 
     renderAllTasks() // What is the purpose of this line in this particular function?
 }
@@ -28,14 +31,18 @@ function addItem (){
 
     // Getting the HTML content for the task input
 function getTaskHtml(taskText,index){
+    let taskDone = '';
+    if(allTasks[index].isDone){
+        taskDone = "taskItemDone"
+    }
     return `
-    <div class="taskItems" data-id=${index}>
+    <div class="taskItems ${taskDone}" data-id=${index}>
         <div class="itemElement">
             <p class="task-p">${taskText}</p>
             <input type="date" id="addDate" value="">
         </div>
         <div class="icons">
-        <i class="fa-solid fa-check" onclick="checkTask()" id="checkTask"></i>
+        <i class="fa-solid fa-check" onclick="checkTask(${index})" id="checkTask"></i>
         <i class="fa-solid fa-pen" onclick="editTask(this)" id="editTask"></i>
         <i class="fa-solid fa-trash" onclick="deleteTask(${index})" id="deleteTask"></i>
         </div>
@@ -48,22 +55,27 @@ function getTaskHtml(taskText,index){
     //bind editTask to edit button
     editButton.onclick = editTask;
 }
-    function checkTask(){
+    function checkTask(index){
         const checkIcon = document.getElementById('checkTask');
         const taskItems = document.querySelector('.taskItems');
         const taskParagraphText = document.querySelector('.task-p');
         taskItems.style.backgroundColor = 'limegreen';
         checkIcon.style.color = 'white';
         taskParagraphText.style.color = 'white';
+        allTasks[index].isDone = !allTasks[index].isDone
+        renderAllTasks()
     }
     
     function deleteTask(index){
         const taskItems = document.querySelector('.taskItems');
         taskItems.remove();
+        console.log(index)
+        allTasks.splice(index, 1)
+        renderAllTasks()
     }
     function confirmChange(id){
         const taskInput = document.getElementById('taskInput'+ id).value
-        allTasks[id] = taskInput 
+        allTasks[id].name = taskInput 
         renderAllTasks()
 
     }
@@ -71,7 +83,7 @@ function getTaskHtml(taskText,index){
         let listItem = element.parentNode.parentNode
         console.log(listItem)
         const id = listItem.dataset.id
-        const taskDesc = allTasks[id]
+        const taskDesc = allTasks[id].name
         listItem.innerHTML =`
         <div id="edit"> 
             <input class="editInput" type="text" id="taskInput${id}" value='${taskDesc}'>
@@ -103,12 +115,11 @@ function getTaskHtml(taskText,index){
     const todoItems = document.querySelector('.todo-items');
     todoItems.innerHTML = '';
     for(let index=0; index<allTasks.length; index++){
-        const task = allTasks[index]
+        const task = allTasks[index].name
         todoItems.innerHTML += getTaskHtml(task,index);
     }
 }
 
-   
 
 renderAllTasks()
 
