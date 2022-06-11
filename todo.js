@@ -29,6 +29,7 @@ function addItem (){
         }
     });
 
+    // Local Storage
     function storeTasks(){
         const dataAsString = JSON.stringify(allTasks)
         localStorage.setItem('allTasks', dataAsString)
@@ -63,11 +64,11 @@ function getTaskHtml(taskText,index){
     `
     
 }
-    let bindTaskEvents = function(taskListItem, checkBoxEventHandler) {
-    let editButton = taskListItem.getElementById("input-text");
-    //bind editTask to edit button
-    editButton.onclick = editTask;
-}
+
+   
+    
+
+    // Check icon
     function checkTask(index){
         const checkIcon = document.getElementById('checkTask');
         const taskItems = document.querySelector('.taskItems');
@@ -80,6 +81,7 @@ function getTaskHtml(taskText,index){
         storeTasks()
     }
     
+    // Delete icon
     function deleteTask(index){
         const taskItems = document.querySelector('.taskItems');
         taskItems.remove();
@@ -88,12 +90,16 @@ function getTaskHtml(taskText,index){
         renderAllTasks()
         storeTasks()
     }
+
+    // Check icon for confirmation after editing task
     function confirmChange(id){
         const taskInput = document.getElementById('taskInput'+ id).value
         allTasks[id].name = taskInput 
         renderAllTasks()
         storeTasks()
     }
+
+     // Edit icon
     const editTask = function(element){
         let listItem = element.parentNode.parentNode
         console.log(listItem)
